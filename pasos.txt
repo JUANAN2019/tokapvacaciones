@@ -68,5 +68,8 @@ documentacion inky https://get.foundation/emails/docs/inky.html ver ejemplo de c
 entiendo muy bien lo de tablas dentro de tablas aunque veo el ejemplo
 
 
+creo entidades y relaciones
+
+
 
 
