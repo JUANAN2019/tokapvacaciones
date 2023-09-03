@@ -1,0 +1,16 @@
+framework:
+    mailer:
+        dsn: "%env(MAILER_DSN)%"
+        # envelope:
+        #     sender: "fabien@example.com"
+        #     recipients: ["foo@example.com", "bar@example.com"]
+        # headers:
+        #     From: "Fabien <fabien@example.com>"
+        #     Bcc: "baz@example.com"
+        #     X-Custom-Header: "foobar"
+when@dev:
+    framework:
+        mailer:
+            envelope:
+                # sender: "juananprog@gmail.com" si pongo el que envia no me hace el smpt
+                recipients: ["garciagalindo@telefonica.net"]

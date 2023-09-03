@@ -1,0 +1,72 @@
+symfonytoken repositorio jorge
+Instalo
+symfony new symfony-token.api-inicio --version=5.4
+symfony composer require api
+composer require symfony/orm-pack   sin docker
+composer require symfony/maker-bundle
+composer update
+composer require form validator twig-bundle security-csrf annotations
+composer require symfony/security-bundle
+composer require symfonycasts/verify-email-bundle
+composer require symfony/mailer
+composer require --dev symfony/profiler-pack
+composer require lexik/jwt-authentication-bundle
+
+
+DATABASE_URL="mysql://root:@127.0.0.1:3306/google-token-api-inicio?serverVersion=8&charset=utf8mb4"
+Crear usuario: php bin/console make:user
+ php bin/console make:registration-form
+ php bin/console make:auth 
+ php bin/console lexik:jwt:generate-keypair
+ php bin/console doctrine:database:create
+ php bin/console doctrine:schema:update --force
+ .env añado MAILER_DSN="gmail+smtp://juananprog@gmail.com:tuoczynqywiyftvl@smpt.gmail.com:25"
+ Control de acceso por rol admin en el security.yaml - { path: ^/admin, roles: ROLE_ADMIN }
+ Creamos el controlador de admin: php bin/console make:controller
+ php bin/console make:crud   user y su controlador
+ composer require symfony/google-mailer para poder usar el mailer de google(esto lo instalo porque me lo indica como error)
+ me da este error porque no he creado home controller
+ TODO: provide a valid redirect inside C:\Users\JUNAN\Desktop\Proyecto 
+ Google\Pruebas esquleto proyecto\symfony-token-api-inicio\src\Security\AppCustomAuthenticator.php
+Creamos el controlador de home: php bin/console make:controller
+En el Registration controller, en la linea 56, cambiar la ruta a home o a la ruta que quieres ir una vez registrado (Sería bueno llevarle al login)
+En el src/Security/AppCustomAutheticator.php en la linea 50 especificar a dónde quieres llegar una vez realizado el login (app_home)
+Creamos el controlador de home: php bin/console make:controller
+Configuración del config/packages/security.ymal para el funcionamiento del jwt. Info en: https://symfony.com/bundles/LexikJWTAuthenticationBundle/current/index.html#symfony-5-3-and-higher
+controlador para comprobar el token: ChecktokenController.php
+Hago peticion por postman y funciona habiendo cambiado las configuraciones como corresponden
+A partir de aqui video Token_I min 13
+éxplicacion codigo react fethc a partir de la 1 hora de video, meter datos en localstorage.
+si da fallos hay que instalar open ssl  problema solo en windows
+aqui ya estoy en el video token2  solo es poner body cabeceras 
+instalo composer require symfony/google-mailer para usar smpt de google con esto ya envia correos,
+solo quedaria en dev poner lo que hace falta para que siempre lo envie al mismo correo repasar mas opciones de envio email
+when@dev:
+    framework:
+        mailer:
+            envelope:
+                recipients: ['garciagalindo@telefonica.net']
+para que lo envie al mismo email, pero si lo hace al mismo al ir al loggin desde el link 
+si no me he registrado con @telefonica y es con pepito me dice que no es el mismo 
+correo al que se ha enviado que el que se intenta registrar pero para ver las plantillas de email 
+me sirve que es lo que voy a trabajar ahora
+composer require symfony/twig-bundle
+para enviar imagen y hacerlo como en la documentacion recordar que hay que poner los pares clave: valor en una linea
+diferente si no dara error tal como esta en la documentacion
+
+Instalo inky(especie de bootstrap para contenido email )
+composer require twig/extra-bundle twig/inky-extra
+para poder instalarlo  en php.ini habilito ;extension=xsl
+Ya he conseguido que me funcione exta/inky   he tocado los archivos twig.yaml, confirmation_
+email.html.twig y services.yaml este ultimo creo que no tiene cambio alguno pero tenerlo en cuenta 
+tambien he reiniciado servidor y entorno de desarrollo y he limpiado la cache aunque en dev no deberia
+importar
+Ahora Css-inliner
+composer require twig/extra-bundle twig/cssinliner-extra
+Ya esta funcionando con archivo css externo en twig.yaml uso inky y 
+documentacion inky https://get.foundation/emails/docs/inky.html ver ejemplo de como funciona, no
+entiendo muy bien lo de tablas dentro de tablas aunque veo el ejemplo
+
+
+
+
