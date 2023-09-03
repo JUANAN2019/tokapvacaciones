@@ -18,7 +18,7 @@ class ProductType extends AbstractType
             ->add('price')
             ->add('stock')
             ->add('category')
-            ->add('orders')
+            
         ;
     }
 

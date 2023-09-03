@@ -69,6 +69,8 @@ entiendo muy bien lo de tablas dentro de tablas aunque veo el ejemplo
 
 
 creo entidades y relaciones
+Easy admin symfony 5 la via rapida
+
 
 
 
