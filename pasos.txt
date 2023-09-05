@@ -122,8 +122,12 @@ Hacer: php bin/console make:test (Con la opción: PantherTestCase)
 hecho test para artist 
 php bin/phpunit --verbose
 los test me dan fallo pero tambien me ha indicado que puedo hace 
-composer recipes:update vendor/package
+composer recipes:update vendor/package   como no deja composer recipes:install vendor/package --force -v no me deja algunos paquetes no estan instalados
+
 hago un commit antes de hacerlo 
+composer require symfony/uid
+composer require symfony/dom-crawler
+quito vendor y lock y composer install 
 
 
 
